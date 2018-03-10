@@ -1,5 +1,7 @@
-"use strict";
+/*jslint node: true */
+/*jshint esversion: 6 */
 
+"use strict";
 var Alexa = require("alexa-sdk");
 const request = require('request');
 
@@ -29,7 +31,9 @@ var handlers = {
       // console.log("Ingredients from user's voice: " + JSON.stringify(ingredient));
 
       // Remove empty items
-      var items = ingredient.split(" ").filter(function (e) { return e === 0 || e });
+      var items = ingredient.split(" ").filter(function (e) {
+        return e === 0 || e;
+      });
 
       const options = {
         url: SEARCH_BY_INGREDIENTS + items.join(","),
@@ -80,7 +84,9 @@ var handlers = {
       // console.log("Calories from user's voice: " + JSON.stringify(calories));
 
       // Remove empty items
-      var items = calories.split(" ").filter(function (e) { return e === 0 || e });
+      var items = calories.split(" ").filter(function (e) { 
+        return e === 0 || e;
+      });
 
       const options = {
         url: SEARCH_BY_CALORIES + items.join(","),
@@ -126,13 +132,13 @@ var handlers = {
 function isIngredientSlotValid(intent) {
   var ingredient = intent && intent.slots &&
     intent.slots.ingredient && intent.slots.ingredient.value;
-  return ingredient
+  return ingredient;
 }
 
 function isCaloriesInputValid(intent) {
   var calories = intent && intent.slots &&
     intent.slots.calories && intent.slots.calories.value;
-  return calories
+  return calories;
 
 }
 

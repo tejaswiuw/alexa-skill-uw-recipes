@@ -1,3 +1,6 @@
+/*jslint node: true */
+/*jshint esversion: 6 */
+
 'use strict';
 var request = require('request');
 
@@ -37,7 +40,7 @@ module.exports.searchByIngredients = (event, context, callback) => {
     if (!error && response.statusCode == 200) {
       
       // if the request is successfully processed 
-      var responseMsg = JSON.parse(response["body"]);
+      var responseMsg = JSON.parse(response.body);
 
       console.log('Length of recipe list: ' + responseMsg.length);
       var recipeList = [];

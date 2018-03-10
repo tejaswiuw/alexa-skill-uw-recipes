@@ -1,3 +1,6 @@
+/*jslint node: true */
+/*jshint esversion: 6 */
+
 'use strict';
 
 var request = require('request');
@@ -35,7 +38,7 @@ module.exports.searchRecipesByCalories = (event, context, callback) => {
     if (!error && response.statusCode == 200) {
       
       // if the request is successfully processed
-      var responseMsg = JSON.parse(response["body"]);
+      var responseMsg = JSON.parse(response.body);
       var recipeList = [];
 
       responseMsg = responseMsg.meals;
