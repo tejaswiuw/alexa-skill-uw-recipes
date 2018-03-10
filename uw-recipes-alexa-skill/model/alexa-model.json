@@ -1,0 +1,58 @@
+{
+    "languageModel": {
+        "intents": [
+            {
+                "name": "AMAZON.CancelIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "samples": []
+            },
+            {
+                "name": "HelloIntent",
+                "samples": [
+                    "hi",
+                    "hello",
+                    "howdy"
+                ],
+                "slots": []
+            },
+            {
+                "name": "SearchByCalories",
+                "samples": [
+                    "suggest me a recipe under {calories} calories",
+                    "give recipes below {calories} calories",
+                    "give me some recipes below {calories} calories"
+                ],
+                "slots": [
+                    {
+                        "name": "calories",
+                        "type": "AMAZON.NUMBER"
+                    }
+                ]
+            },
+            {
+                "name": "SearchByIngredients",
+                "samples": [
+                    "what can I make with {ingredient}",
+                    "what can I prepare with {ingredient}",
+                    "what can I cook with {ingredient}",
+                    "give recipes using {ingredient}",
+                    "list recipes using {ingredient}"
+                ],
+                "slots": [
+                    {
+                        "name": "ingredient",
+                        "type": "AMAZON.Food"
+                    }
+                ]
+            }
+        ],
+        "invocationName": "you dub recipes"
+    }
+}
