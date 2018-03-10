@@ -135,7 +135,7 @@ function isCaloriesInputValid(intent) {
   return calories
 
 }
-a
+
 module.exports.hello = (event, context, callback) => {
   // console.log("Input to Alexa's handler" + JSON.stringify(event));
   var alexa = Alexa.handler(event, context);
